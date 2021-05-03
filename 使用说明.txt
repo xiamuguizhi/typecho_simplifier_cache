@@ -1,0 +1,9 @@
+在网站 根目录 新建 文件夹 “cache” 作为缓存文件存放
+
+chmod -Rf 777 /usr/themes/simplifier/
+
+这样有写入权限
+
+gengxinwenzhang.php  复制或者移动到根目录
+
+具体可以查看文章：https://qq.md/posts/120.html
