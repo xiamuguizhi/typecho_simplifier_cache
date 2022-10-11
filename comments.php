@@ -27,26 +27,7 @@ function threadedComments($comments, $options) {
     <h4 class="response">发表新评论</h3>
 <form method="post" action="<?php $this->commentUrl() ?>" id="cf" role="form">
 <?php if($this->user->hasLogin()): ?>
-    <span>已登入<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出 &raquo;</a> | <?php Typecho_Widget::widget('Widget_Security')->to($security); ?><a onclick="if(confirm('确认删除？')==false)return false;location.href='<?php $security->index('/action/contents-post-edit?do=delete&cid='.$this->cid); ?>'">删除文章</a> | <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" target="_blank">编辑文章</a> | <a href="<?php $this->options->siteUrl(); ?>gengxinwenzhang.php?action=del&post=<?php
-  $pageURL = 'http';
- 
-  if ($_SERVER["HTTPS"] == "on") 
-  {
-    $pageURL .= "s";
-  }
-  $pageURL .= "://";
- 
-
-    $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-
-$shouye = $this->options->siteUrl;
-$post = str_replace($shouye,"",$pageURL);
-$post = str_replace(".html","",$post);	
-$post = str_replace("/","",$post);
-$cache= "cache/" . $post;
-
-echo $cache;
-	?>" target="_blank">更新缓存</a></span>
+    <span>已登入<a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出 &raquo;</a> | <?php Typecho_Widget::widget('Widget_Security')->to($security); ?><a onclick="if(confirm('确认删除？')==false)return false;location.href='<?php $security->index('/action/contents-post-edit?do=delete&cid='.$this->cid); ?>'">删除文章</a> | <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" target="_blank">编辑文章</a></span>
 <?php else: ?>
     <?php if($this->remember('author',true) != "" && $this->remember('mail',true) != "") : ?>
         <span>欢迎【<?php $this->remember('author'); ?>】的归来 | <small style="cursor: pointer;" onclick = "tg_c('ainfo','hinfo');"> 编辑资料</small></span>
